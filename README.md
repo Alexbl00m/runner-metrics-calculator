@@ -2,7 +2,7 @@
 
 A comprehensive web application providing scientifically validated metrics and calculations to help runners of all levels optimize their training and performance.
 
-![Runner Performance Metrics Calculator](https://via.placeholder.com/800x400)
+![Runner Performance Metrics Calculator](Logotype_Light@2x.png)
 
 ## Features
 
