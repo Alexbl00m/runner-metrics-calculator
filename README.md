@@ -1,39 +1,15 @@
-# Runner Performance Metrics Calculator
+# Runner Metrics Calculator
 
-A comprehensive web application providing scientifically validated metrics and calculations to help runners of all levels optimize their training and performance.
-
-![Runner Performance Metrics Calculator](Logotype_Light@2x.png)
+A comprehensive Streamlit web application for runners to calculate, analyze, and visualize their running metrics.
 
 ## Features
 
-This application offers a suite of calculators and analysis tools for runners, including:
+- **Pace Calculator**: Convert between different pace metrics (min/km, min/mile, km/h, mph)
+- **Race Time Predictor**: Predict finish times for various race distances based on previous performances
+- **Split Calculator**: Generate even or negative splits for race planning
+- **Metrics Analyzer**: Upload and analyze your running data with interactive visualizations
 
-- **VO2 Max Calculator**: Estimate maximal oxygen uptake through multiple protocols
-- **Training Zones**: Calculate personalized heart rate, pace, and power zones
-- **Race Time Predictor**: Predict performance across race distances
-- **Running Economy**: Assess efficiency metrics and identify improvements
-- **VDOT Calculator**: Apply Jack Daniels' running formula for training
-- **Running Power**: Estimate and analyze running power metrics
-- **Heart Rate Reserve**: Calculate Karvonen formula zones
-- **Training Load & Recovery**: Track training stress and optimize recovery
-- **Running Form Analysis**: Identify form issues and receive targeted recommendations
-
-## Scientific Basis
-
-All metrics and recommendations in this application are based on validated scientific research in exercise physiology, biomechanics, and sports science. Each calculator includes references to relevant studies and explanations of the underlying concepts.
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.7+
-- Streamlit
-- Pandas
-- NumPy
-- Matplotlib
-- Plotly
-
-### Installation
+## Installation
 
 1. Clone the repository:
    ```
@@ -41,45 +17,65 @@ All metrics and recommendations in this application are based on validated scien
    cd runner-metrics-calculator
    ```
 
-2. Install required packages:
+2. Create a virtual environment and activate it:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. Install dependencies:
    ```
    pip install -r requirements.txt
    ```
 
-3. Run the Streamlit app:
+4. Run the application:
    ```
    streamlit run app.py
    ```
 
-4. Access the application in your web browser at `http://localhost:8501`
-
 ## Project Structure
-
-The application is organized in a modular structure:
 
 ```
 runner-metrics-calculator/
-├── app.py                  # Main application file
-├── requirements.txt        # Dependencies
-├── README.md               # Project documentation
-├── assets/
-│   └── styles.css          # CSS styling
-└── modules/
-    ├── welcome.py          # Welcome page
-    ├── vo2max_calculator.py # VO2 Max Calculator
-    └── ...                 # Other calculator modules
+├── app.py                  # Main Streamlit application
+├── modules/                # Application modules
+│   ├── __init__.py
+│   ├── welcome.py          # Welcome page and about sections
+│   ├── pace_calculator.py  # Pace calculation utilities
+│   └── metrics_analyzer.py # Data analysis functionality
+├── requirements.txt        # Python dependencies
+└── README.md               # This file
 ```
 
-## How to Contribute
+## Usage
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+1. Launch the application by running `streamlit run app.py`
+2. Navigate between different sections using the sidebar
+3. For metrics analysis, upload a CSV or Excel file containing your running data
+4. The application supports multiple data formats, including Strava and Garmin exports
+
+## Data Format
+
+For the metrics analyzer, the application supports the following data formats:
+
+- Standard format: columns for date, distance, time
+- Strava exports: Activity Date, Distance, Moving Time
+- Garmin exports: start_time, distance, duration
+- Simple format: date, km, pace
+
+If your data doesn't match any of these formats, you can manually map the columns in the interface.
+
+## Dependencies
+
+- streamlit
+- pandas
+- numpy
+- plotly
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is open source and available under the [MIT License](LICENSE).
 
-## Acknowledgments
+## Contributing
 
-- Exercise physiology research that makes these calculations possible
-- The Streamlit team for their amazing framework
-- The running community for feedback and suggestions
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/runner-metrics-calculator/issues).
