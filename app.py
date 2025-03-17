@@ -1,6 +1,14 @@
 import streamlit as st
 from modules import welcome, pace_calculator, metrics_analyzer
 
+# Set up Streamlit configuration - must be the first Streamlit command
+st.set_page_config(
+    page_title="Runner Metrics Calculator",
+    page_icon="🏃‍♂️",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 # Custom CSS
 st.markdown("""
 <style>
@@ -61,14 +69,6 @@ st.sidebar.title("Runner Metrics Calculator")
 page = st.sidebar.radio(
     "Navigation",
     ["Welcome", "Pace Calculator", "Metrics Analyzer", "About"]
-)
-
-# Set up Streamlit configuration
-st.set_page_config(
-    page_title="Runner Metrics Calculator",
-    page_icon="🏃‍♂️",
-    layout="wide",
-    initial_sidebar_state="expanded"
 )
 
 # Display the selected page
